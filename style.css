@@ -1,5 +1,37 @@
 nav {
   position: fixed;
+  top: 0;
   background:mistyrose;
   width:100%;
+}
+
+footer {
+  position:fixed;
+  bottom: 0;
+  background:mistyrose;
+  width:100%;
+}
+
+.container {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns:1fr 2fr 1fr;
+}
+
+.container > * {
+  grid-column: 2 / -2;
+}
+
+.container > img{
+  grid-column: 1 / -1;
+  background: greenyellow;
+  border: 1px solid black;
+}
+
+.section {
+  display:block;
+}
+
+.ad .section {
+  
 }
