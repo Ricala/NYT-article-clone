@@ -33,6 +33,21 @@ h2 {
   font-weight: 700;
 }
 
+button {
+  color: white;
+  background: rgb(98, 136, 165);
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+button:hover {
+  background: rgb(70, 117, 153);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
 /* 
 Main container selector 
 */
@@ -115,7 +130,7 @@ Top content
   border-radius: 50px;
 }
 
-.author-social img:hover {
+.social:hover{
   border: 1px solid rgba(128, 128, 128, 0.336);
   background: white;
   cursor: pointer;
@@ -199,15 +214,18 @@ Theories content
   margin-left: 20px;
 }
 
+.side-picks h4 {
+  font-size: 14px;
+  border-bottom: 1px solid rgba(185, 184, 184, 0.247);
+  padding-bottom: 10px;
+  margin: 0;
+}
 .side-picks div {
   display:flex;
-  margin-top: 10px;
+  margin-top: 18px;
   align-items: center;
 }
 
-.side-picks div:first-child {
-  border-top: 1px solid gray;
-}
 
 .side-picks div:last-child {
   background: rgba(185, 184, 184, 0.247);
@@ -226,8 +244,46 @@ Theories content
   margin-left: 4px;
 }
 
-.side-picks a:hover {
-  text-decoration: underline;
+/*
+Sign up bar
+ */
+
+ .sign-up > * {
+   margin: 4px 0;
+ }
+
+ .sign-up h4 {
+   font-size: 18px;
+   font-weight: 600;
+ }
+
+.sign-up p {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.sign-up button {
+  width: 160px;
+}
+
+.sign-up button:hover {
+  background: rgb(70, 117, 153);
+  cursor: pointer;
+}
+
+/* 
+Main Content foot
+ */
+
+.content-foot {
+  display:flex;
+  margin-top:25px;
+}
+
+.content-foot button{
+  width: 300px;
+  height: 35px;
+  margin-right: 100px;
 }
 
 /* 
@@ -237,26 +293,76 @@ Bottom Articles section
   grid-column: 1/-1;
 }
 
+
+
 .articles {
   grid-column: 1 / -1;
   display: grid;
+  margin: 25px;
   grid-gap:30px;
   grid-template-areas:
-    "next-art next-art pop"
-    "next-art next-art pop"
-    "editor-art editor-art pop"
+    "next-art next-art pop pop pop"
+    "next-art next-art pop pop pop"
+    "editor-art editor-art pop pop pop"
+}
+
+.articles > * {
+  border-top: 1px solid gray;
 }
 
 .article-next {
   grid-area: next-art;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 10px;
+}
+
+.art-text-title {
+  grid-column: 1 / -1;
+  font-weight: 600;
+  color:black;
+  text-decoration: none;
+  padding-top:10px;
+}
+
+.art-text-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.more-articles img {
+  width: 200px;
+}
+
+.more-articles p {
+  font-size: 18px;
+  line-height: 20px;
+  margin-right: 50px;
+}
+
+.more-articles p:hover {
+  color: rgba(0, 0, 0, 0.486);
+  cursor: pointer;
 }
 
 .article-pop {
   grid-area: pop;
+  padding: 10px;
 }
+
+.article-pop h4 {
+  font-size:18px;
+  font-weight: 400;
+  border-top: 1px solid rgba(128, 128, 128, 0.178);
+  padding: 12px 0;
+  margin: 0;
+}
+
+.article-pop h4:hover {
+  color: rgba(0, 0, 0, 0.486);
+  cursor: pointer;
+}
+
 
 .article-editor {
   grid-area: editor-art;
@@ -264,6 +370,21 @@ Bottom Articles section
   grid-template-columns: repeat(3,1fr);
   border-top: 1px solid black;
 }
+
+.article-editor p {
+  font-size: 18px;
+  line-height: 20px;
+  margin-right: 50px;
+}
+
+.article-editor p:hover {
+  color: rgba(0, 0, 0, 0.486);
+  cursor: pointer;
+}
+
+/* 
+bottom links
+ */
 
 .additional-links{
   grid-column: 1 / -1;
