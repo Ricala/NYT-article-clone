@@ -33,10 +33,19 @@ h2 {
   font-weight: 700;
 }
 
+/* 
+Main container selector 
+*/
+
+figure > * {
+  align-self: center;
+  justify-self: center;
+}
+
 .container {
   margin-top: 25px;
   display: grid;
-  grid-template-columns:1fr 2fr 1fr;
+  grid-template-columns:2fr 3fr 2fr;
   padding:0;
 }
 
@@ -44,6 +53,113 @@ h2 {
   grid-column: 2 / -2;
 }
 
+.container > figure{
+  grid-column: 1 / -1;
+  margin: 0;
+  display: grid;
+  background: rgb(243, 243, 243);
+  padding: 10px;
+}
+
+/* 
+Top content 
+*/
+
+.main-img {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+.main-img > *{
+  grid-column: 2 / -2;
+}
+
+.main-img img {
+  width: 100%;
+}
+
+.author-info h3 {
+  font-size: 16px;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+.author-info a {
+  text-decoration: underline;
+  color:rgb(92, 91, 91);
+}
+
+.author-info a:hover {
+  text-decoration: none;
+}
+.author-social {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.author-social h4 {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.social{
+  width: 18px;
+  height: 18px;
+  margin: 8px;
+  padding:4px;
+  background: rgba(128, 128, 128, 0.123);
+  border: 1px solid rgba(128, 128, 128, 0.014);
+  border-radius: 50px;
+}
+
+.author-social img:hover {
+  border: 1px solid rgba(128, 128, 128, 0.336);
+  background: white;
+  cursor: pointer;
+}
+
+/* Captions */
+
+.caption{
+  font-size: 15px;
+  line-height: 15px;
+  color: #666;
+}
+
+.cap-author{
+  font-size: 12px;
+  color: #666;
+}
+
+.cap-space {
+  margin: 2px;
+}
+
+/* 
+Telescope Image 
+*/
+
+.container > .telescope-img img{
+  width: 600px;
+}
+
+.container .telescope-img {
+  background-color: white;
+}
+
+/*
+Theories content 
+*/
+
+.theories {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  justify-content: center; 
+}
 .container .theories {
   background-image: url("images/theory1.png");
   background-size: 600px;
@@ -74,68 +190,51 @@ h2 {
   padding: 10px;
 }
 
-.container > figure{
-  grid-column: 1 / -1;
-  margin: 0;
-  display: grid;
-  background: rgb(243, 243, 243);
-  padding: 10px;
-}
-
-.container .main-img {
-  background: white;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.main-img img {
-  max-width: 850px;
-  min-width: 300px;
-}
-
-.caption{
-  font-size: 15px;
-  line-height: 15px;
-  color: #666;
-}
-
-.cap-author{
-  font-size: 12px;
-  color: #666;
-}
-
-.cap-space {
-  margin: 2px;
-}
-
-.container > .telescope-img img{
-  width: 600px;
-}
-
-.container .telescope-img {
-  background-color: white;
-
-}
-
-figure > * {
-  align-self: center;
-  justify-self: center;
-}
-
+/* Right side content */
 
 .side-picks, .sign-up {
   grid-column: span 1 / -1;
   display: flex;
   flex-flow: column;
+  margin-left: 20px;
 }
 
-.theories {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(4, 150px);
-  justify-content: center; 
+.side-picks div {
+  display:flex;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.side-picks div:first-child {
+  border-top: 1px solid gray;
+}
+
+.side-picks div:last-child {
+  background: rgba(185, 184, 184, 0.247);
+  padding: 5px 5px 5px 0;
+}
+
+.side-picks img {
+  width: 80px;
+  height: 80px;
+}
+
+.side-picks a {
+  font-size: 13px;
+  color: rgb(5, 5, 5);
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.side-picks a:hover {
+  text-decoration: underline;
+}
+
+/* 
+Bottom Articles section
+*/
+#editor {
+  grid-column: 1/-1;
 }
 
 .articles {
@@ -166,9 +265,18 @@ figure > * {
   border-top: 1px solid black;
 }
 
-#editor {
-  grid-column: 1/-1;
+.additional-links{
+  grid-column: 1 / -1;
+  display: flex;
+  align-content: center;
+  border-top: 1px solid gray;
+  margin-bottom: 30px;
+  padding: 10px;
 }
+
+/* 
+Content Footer
+*/
 
 .footer-info h4 {
   grid-column: 1 / -1
@@ -179,14 +287,4 @@ figure > * {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }
-
-.additional-links{
-  grid-column: 1 / -1;
-  display: flex;
-  align-content: center;
-  border-top: 1px solid gray;
-  margin-bottom: 30px;
-  padding: 10px;
-}
-
 
