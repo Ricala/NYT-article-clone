@@ -99,9 +99,9 @@ figure > * {
 }
 
 .container > figure{
+  display: grid;
   grid-column: 1 / -1;
   margin: 0;
-  display: grid;
   background: rgb(243, 243, 243);
   padding: 10px;
 }
@@ -505,12 +505,15 @@ bottom links
   grid-column: 2 / -1;
   grid-row-start: 1;
   margin: 5px;
+  font-size: 15px;
+  font-weight: 100;
 }
 
 .footer-option {
   grid-column: -1 / -2;
   grid-row-start: 1;
   justify-self:end;
+  padding-right: 15px;
 }
 
 .footer-flex:hover {
