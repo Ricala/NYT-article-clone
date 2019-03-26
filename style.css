@@ -1,3 +1,8 @@
+body {
+  font-family: nyt-imperial,georgia,'times new roman',times,serif;
+}
+
+
 nav {
   position: fixed;
   top: 0;
@@ -16,22 +21,98 @@ footer {
   margin-top: 25px;
   display: grid;
   grid-template-columns:1fr 2fr 1fr;
+  padding:0;
 }
 
 .container > * {
   grid-column: 2 / -2;
 }
 
-.container > img{
+.container > figure{
   grid-column: 1 / -1;
-  background: greenyellow;
-  border: 1px solid black;
+  margin: 0;
+  display: grid;
+  background: rgb(243, 243, 243);
+  padding: 10px;
 }
 
-.section {
-  display:block;
+.container .main-img {
+  background: white;
+
 }
 
-.ad .section {
-  
+.main-img img {
+  max-width: 850px;
+  min-width: 300px;
 }
+
+figure > * {
+  align-self: center;
+  justify-self: center;
+}
+
+.side-picks, .sign-up {
+  grid-column: span 1 / -1;
+  display: flex;
+  flex-flow: column;
+}
+
+.theories {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  justify-content: center; 
+}
+
+.articles {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-gap:30px;
+  grid-template-areas:
+    "next-art next-art pop"
+    "next-art next-art pop"
+    "editor-art editor-art pop"
+}
+
+.article-next {
+  grid-area: next-art;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.article-pop {
+  grid-area: pop;
+}
+
+.article-editor {
+  grid-area: editor-art;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  border-top: 1px solid black;
+}
+
+#editor {
+  grid-column: 1/-1;
+}
+
+.footer-info h4 {
+  grid-column: 1 / -1
+}
+
+.footer-info{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.additional-links{
+  grid-column: 1 / -1;
+  display: flex;
+  align-content: center;
+  border-top: 1px solid gray;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+
